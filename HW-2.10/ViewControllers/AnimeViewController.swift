@@ -9,22 +9,22 @@ import UIKit
 
 class AnimeViewController: UIViewController {
 
-
     @IBOutlet var animeTitleLabel: UILabel!
-    @IBOutlet var originalTitleLabel: UILabel!
-    @IBOutlet var animeImage: UIImageView!
-    @IBOutlet var timeLabel: UILabel!
+    
+    @IBOutlet var animeOriginalTitleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
+
+    @IBOutlet var animeImage: UIImageView!
     
     var randomAnime: Anime?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         animeTitleLabel.text = randomAnime?.title
-        originalTitleLabel.text = randomAnime?.original_title
+        animeOriginalTitleLabel.text = randomAnime?.original_title
         descriptionLabel.text = randomAnime?.description
+    
         fetchImage()
     }
     
