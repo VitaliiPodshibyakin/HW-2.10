@@ -93,10 +93,15 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="psb-Hd-z5Z">
+                                                <rect key="frame" x="197" y="199.5" width="20" height="20"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="psb-Hd-z5Z" firstAttribute="centerX" secondItem="Fy5-8i-eQo" secondAttribute="centerX" id="1Ht-2p-jhA"/>
                                             <constraint firstAttribute="trailing" secondItem="fIQ-Ft-OxJ" secondAttribute="trailing" constant="20" id="3vB-lr-fOz"/>
+                                            <constraint firstItem="psb-Hd-z5Z" firstAttribute="centerY" secondItem="Fy5-8i-eQo" secondAttribute="centerY" id="RqE-bw-190"/>
                                             <constraint firstItem="Fy5-8i-eQo" firstAttribute="top" secondItem="ehK-qm-Zhh" secondAttribute="top" constant="35" id="U79-Gw-NdR"/>
                                             <constraint firstItem="Fy5-8i-eQo" firstAttribute="centerX" secondItem="ehK-qm-Zhh" secondAttribute="centerX" id="dQq-vk-MWT"/>
                                             <constraint firstItem="duM-af-QW7" firstAttribute="centerX" secondItem="ehK-qm-Zhh" secondAttribute="centerX" id="h2Z-6E-Kea"/>
@@ -129,6 +134,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="1100"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="psb-Hd-z5Z" id="JBj-F5-Lq1"/>
                         <outlet property="animeImage" destination="Fy5-8i-eQo" id="4R4-8q-wRm"/>
                         <outlet property="animeOriginalTitleLabel" destination="wod-rs-rKf" id="r7q-c7-dwd"/>
                         <outlet property="animeTitleLabel" destination="Qms-IL-Yjy" id="vWE-2l-dNk"/>

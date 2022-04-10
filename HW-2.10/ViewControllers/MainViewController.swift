@@ -23,7 +23,7 @@ class MainViewController: UIViewController {
 
 
     @IBAction func getRandomAnime() {
-        
+        // при удалении крашится, не пойму почему
     }
     
 //     MARK: - Navigation
