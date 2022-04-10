@@ -16,28 +16,15 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetch()
+                NetWorkManager.shared.fetchData(from: urlString) { animes in
+                    self.animes = animes
+                }
     }
 
 
     @IBAction func getRandomAnime() {
-    }
-    
-    private func fetch() {
-        guard let url = URL(string: urlString) else { return }
         
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "No error description")
-                return
-            }
-        do {
-            self.animes = try JSONDecoder().decode([Anime].self, from: data)
-        } catch let error {
-            print(error.localizedDescription)
-        }
-        }.resume()
-}
+    }
     
 //     MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -10,7 +10,7 @@ import Foundation
 struct Anime: Decodable {
     
     let title: String
-    let original_title: String
+    let originalTitle: String
     let image: String
     let description: String
     

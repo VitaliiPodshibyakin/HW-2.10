@@ -22,28 +22,11 @@ class AnimeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         animeTitleLabel.text = randomAnime?.title
-        animeOriginalTitleLabel.text = randomAnime?.original_title
+        animeOriginalTitleLabel.text = randomAnime?.originalTitle
         descriptionLabel.text = randomAnime?.description
     
-        fetchImage()
-    }
-    
-    private func fetchImage() {
-        guard let url = URL(string: randomAnime?.image ?? "") else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, let response = response else {
-                print(error?.localizedDescription ?? "No error description")
-                return
-            }
-            
-            print(response)
-            
-            guard let image = UIImage(data: data) else { return }
-            
-            DispatchQueue.main.async {
-                self.animeImage.image = image
-            }
-        }.resume()
+        NetWorkManager.shared.fetchImage(from: randomAnime?.image ?? "") { image in
+            self.animeImage.image = image
+        }
     }
 }
