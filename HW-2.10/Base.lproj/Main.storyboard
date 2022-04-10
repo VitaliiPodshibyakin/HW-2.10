@@ -23,23 +23,37 @@
                                     <constraint firstAttribute="height" constant="198" id="ty3-XR-u0l"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azd-ef-p1m">
-                                <rect key="frame" x="92.5" y="407" width="190.5" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Get anime for the evening"/>
-                                <connections>
-                                    <action selector="getRandomAnime" destination="Lz2-ov-Jy8" eventType="touchUpInside" id="cB2-7R-rDc"/>
-                                    <segue destination="uBM-RZ-GLb" kind="show" id="sjt-hY-ROG"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="Gca-QL-kIk">
+                                <rect key="frame" x="92.5" y="407" width="190.5" height="122"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azd-ef-p1m">
+                                        <rect key="frame" x="0.0" y="0.0" width="190.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Get anime for the evening"/>
+                                        <connections>
+                                            <action selector="getRandomAnime" destination="Lz2-ov-Jy8" eventType="touchUpInside" id="cB2-7R-rDc"/>
+                                            <segue destination="uBM-RZ-GLb" kind="show" id="sjt-hY-ROG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkm-dc-Tpg">
+                                        <rect key="frame" x="0.0" y="91" width="190.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Get anime with Alamofire"/>
+                                        <connections>
+                                            <action selector="getAnimeWithAlamofire" destination="Lz2-ov-Jy8" eventType="touchUpInside" id="psd-AL-fwT"/>
+                                            <segue destination="uBM-RZ-GLb" kind="show" id="9h3-Ej-a2g"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VFZ-B9-EQv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="VFZ-B9-EQv" firstAttribute="trailing" secondItem="q94-f1-3ea" secondAttribute="trailing" constant="68" id="1di-xJ-hyb"/>
                             <constraint firstItem="q94-f1-3ea" firstAttribute="top" secondItem="VFZ-B9-EQv" secondAttribute="top" constant="74" id="CSY-gk-3Iv"/>
-                            <constraint firstItem="azd-ef-p1m" firstAttribute="top" secondItem="q94-f1-3ea" secondAttribute="bottom" constant="91" id="PhZ-mx-nvg"/>
-                            <constraint firstItem="azd-ef-p1m" firstAttribute="centerX" secondItem="lcP-Fd-KXR" secondAttribute="centerX" id="ZCe-U7-gvo"/>
+                            <constraint firstItem="Gca-QL-kIk" firstAttribute="centerX" secondItem="lcP-Fd-KXR" secondAttribute="centerX" id="Kxr-Us-Jx1"/>
+                            <constraint firstItem="Gca-QL-kIk" firstAttribute="top" secondItem="q94-f1-3ea" secondAttribute="bottom" constant="91" id="lEp-JA-Kzz"/>
                             <constraint firstItem="q94-f1-3ea" firstAttribute="leading" secondItem="VFZ-B9-EQv" secondAttribute="leading" constant="67" id="mrl-rK-phm"/>
                         </constraints>
                     </view>
@@ -164,6 +178,9 @@
             <point key="canvasLocation" x="211.59420289855075" y="298.66071428571428"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="sjt-hY-ROG"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="regnum_picture_1548680811307255_big" width="640" height="427"/>
         <systemColor name="systemBackgroundColor">

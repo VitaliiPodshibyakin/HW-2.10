@@ -14,4 +14,27 @@ struct Anime: Decodable {
     let image: String
     let description: String
     
+    init(animeData: [String: Any]) {
+        title = animeData["title"] as? String ?? ""
+        originalTitle = animeData["original_title"] as? String ?? ""
+        image = animeData["image"] as? String ?? ""
+        description = animeData["description"] as? String ?? ""
+    }
+
+    static func getAnimes(from value: Any) -> [Anime] {
+        guard let animesData = value as? [[String: Any]] else { return [] }
+        var animes: [Anime] = []
+        for animeData in animesData {
+            let anime = Anime(animeData: animeData)
+            animes.append(anime)
+    }
+        return animes
+    }
+//
+//    static func getCourses(from value: Any) -> [Course] {
+//        guard let coursesData = value as? [[String: Any]] else { return [] }
+//        return coursesData.compactMap { Course(courseData: $0) }
+//    }
+    
 }
+
