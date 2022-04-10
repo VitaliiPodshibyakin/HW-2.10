@@ -47,12 +47,4 @@ class MainViewController: UIViewController {
             }
     }
 }
-//guard let animesData = value as? [[String: Any]] else { return }
-//
-//for animeData in animesData {
-//    let anime = Anime(animeData: animeData)
-//    self.animes.append(anime)
-//let anime = Anime(title: animeData["title"] as? String ?? "",
-//                  originalTitle: animeData["original_title"] as? String ?? "",
-//                  image: animeData["image"] as? String ?? "",
-//                  description: animeData["description"] as? String ?? "")
+

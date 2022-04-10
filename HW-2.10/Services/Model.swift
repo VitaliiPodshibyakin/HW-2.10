@@ -29,12 +29,6 @@ struct Anime: Decodable {
             animes.append(anime)
     }
         return animes
-    }
-//
-//    static func getCourses(from value: Any) -> [Course] {
-//        guard let coursesData = value as? [[String: Any]] else { return [] }
-//        return coursesData.compactMap { Course(courseData: $0) }
-//    }
-    
+    }    
 }
 
